@@ -1,14 +1,26 @@
 ﻿// Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 // A (3,6,8); B (2,1,-7), -> 15.84
 
-int Xa = 3, Ya = 6, Za = 8;
-int Xb = 2, Yb = 1, Zb = -7;
+double GetDistance(double Xa, double Ya, double Za, double Xb, double Yb, double Zb)
+{
+    return Math.Sqrt(Math.Pow(Xb - Xa, 2) + 
+                     Math.Pow(Yb - Ya, 2) + 
+                     Math.Pow(Zb - Za,2));
+}
+
+double GetNumber(string text)
+{
+    System.Console.WriteLine(text);
+    return Convert.ToDouble(Console.ReadLine());
+}
+
+double Xa = GetNumber("Xa = ");  
+double Ya = GetNumber("Ya = ");  
+double Za = GetNumber("Za = ");  
+double Xb = GetNumber("Xb = ");  
+double Yb = GetNumber("Yb = ");  
+double Zb = GetNumber("Zb = ");
 
 double Distance = GetDistance(Xa, Ya, Za, Xb, Yb, Zb);
-
-double GetDistance(int Xa, int Ya, int Za, int Xb, int Yb, int Zb)
-{
-    return Math.Sqrt((Xb - Xa) * (Xb - Xa) + (Yb - Ya) * (Yb - Ya) + (Zb - Za) * (Zb - Za));
-}
 
 System.Console.WriteLine(Distance);
